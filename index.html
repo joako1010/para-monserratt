@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Para Monserrat</title>
+    <meta name="description" content="Algo especial para el 21 de septiembre.">
+
+    <!-- Icono de la pestaña del navegador (favicon), una florecita amarilla -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%232e2444'/%3E%3Cg fill='%23f6c453'%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(0 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(45 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(90 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(135 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='4' fill='%23b9752a'/%3E%3C/svg%3E">
+
+    <!--
+  ETIQUETAS OPEN GRAPH
+  Esto es lo que hace que, cuando mandes el link por WhatsApp o Instagram,
+  se vea una tarjeta bonita con título y descripción (como una página real),
+  en vez de solo un link pelado.
+
+  >>> UNA VEZ QUE SUBAS EL ARCHIVO Y TENGAS TU LINK FINAL (ej: https://para-monserrat.netlify.app),
+      REEMPLAZA "PON_AQUI_TU_LINK" DE LA LÍNEA DE ABAJO POR ESE LINK. <<<
+-->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Para ti 🌼">
+    <meta property="og:description" content="Algo especial para el 21 de septiembre.">
+    <meta property="og:url" content="https://para-la-mas-hermosa-monserratt">
+    <meta name="twitter:card" content="summary">
+
+    <style>
+        :root {
+            --ground-top: #241a38;
+            --ground-bot: #4a2f52;
+            --petal: #f6c453;
+            --petal-deep: #dd9a3b;
+            --petal-dark: #b9752a;
+            --leaf: #5c8a56;
+            --leaf-dark: #3e6339;
+            --ink: #fff8ec;
+            --ink-soft: #e6d6c2;
+            --card: #00000026;
+            --rule: #f6c45355;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+        }
+
+        body {
+            background:
+                radial-gradient(ellipse 70% 40% at 50% 0%, #6b3d5a55, transparent 60%),
+                linear-gradient(180deg, var(--ground-top) 0%, var(--ground-bot) 100%);
+            color: var(--ink);
+            font-family: 'Lora', Georgia, 'Times New Roman', serif;
+            padding-inline: 20px;
+            overflow-x: hidden;
+        }
+
+        .wrap {
+            max-width: 640px;
+            margin: 0 auto;
+            padding-block: 56px 72px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ---------- Garden hero ---------- */
+        .garden {
+            width: 100%;
+            max-width: 520px;
+            aspect-ratio: 16/11;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .garden svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .stem {
+            transform-origin: bottom center;
+            animation: sway 5.5s ease-in-out infinite;
+        }
+
+        .stem:nth-of-type(1) {
+            animation-delay: 0s;
+        }
+
+        .stem:nth-of-type(2) {
+            animation-delay: .6s;
+            animation-duration: 6.2s;
+        }
+
+        .stem:nth-of-type(3) {
+            animation-delay: 1.1s;
+            animation-duration: 4.9s;
+        }
+
+        .stem:nth-of-type(4) {
+            animation-delay: .3s;
+            animation-duration: 5.8s;
+        }
+
+        .stem:nth-of-type(5) {
+            animation-delay: .9s;
+            animation-duration: 5.1s;
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(-2.5deg);
+            }
+
+            50% {
+                transform: rotate(2.5deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .stem,
+            .petal-fall {
+                animation: none !important;
+            }
+        }
+
+        /* falling petals */
+        .petal-fall {
+            position: absolute;
+            top: -6%;
+            font-size: 14px;
+            animation: fall linear infinite;
+            opacity: .85;
+            color: var(--petal);
+            filter: drop-shadow(0 1px 1px #00000030);
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: .85;
+            }
+
+            100% {
+                transform: translateY(340px) rotate(230deg);
+                opacity: 0;
+            }
+        }
+
+        /* ---------- Type ---------- */
+        .eyebrow {
+            font-family: 'Cormorant Garamond', 'Lora', serif;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin: 0 0 6px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: clamp(30px, 6vw, 44px);
+            line-height: 1.1;
+            text-align: center;
+            text-wrap: balance;
+            margin: 0 0 4px;
+            color: var(--ink);
+        }
+
+        .date-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 14px auto 8px;
+            padding: 7px 16px;
+            border: 1px solid var(--rule);
+            border-radius: 999px;
+            font-size: 13px;
+            letter-spacing: .05em;
+            color: var(--petal);
+            background: var(--card);
+        }
+
+        .divider {
+            width: 64px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--petal), transparent);
+            margin: 28px auto 30px;
+        }
+
+        /* ---------- Letter ---------- */
+        .letter {
+            width: 100%;
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: 18px;
+            padding: clamp(24px, 5vw, 44px);
+            backdrop-filter: blur(2px);
+        }
+
+        .letter p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin: 0 0 20px;
+        }
+
+        .letter p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .letter .greeting {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--ink);
+            margin-bottom: 22px;
+        }
+
+        .dropcap:first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.1em;
+            line-height: .8;
+            float: left;
+            padding: .05em .08em 0 0;
+            color: var(--petal);
+        }
+
+        .signoff {
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        .signoff .from-line {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--petal);
+            margin: 2px 0 0;
+        }
+
+        .signoff .care-line {
+            font-size: 15px;
+            color: var(--ink-soft);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            opacity: .6;
+            text-align: center;
+        }
+
+        @media (max-width:420px) {
+            .letter p {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="garden" aria-hidden="true">
+            <svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="glow" cx="50%" cy="30%" r="60%">
+                        <stop offset="0%" stop-color="#f6c45333" />
+                        <stop offset="100%" stop-color="#f6c45300" />
+                    </radialGradient>
+                </defs>
+                <ellipse cx="260" cy="120" rx="220" ry="140" fill="url(#glow)" />
+
+                <!-- ground line -->
+                <path d="M0,300 Q130,285 260,298 T520,296" fill="none" stroke="#00000022" stroke-width="2" />
+
+                <!-- five stems: sunflowers and yellow lilies -->
+                <g class="stem">
+                    <path d="M120,300 C118,250 122,210 128,178" fill="none" stroke="var(--leaf-dark)" stroke-width="5"
+                        stroke-linecap="round" />
+                    <path d="M124,230 C104,224 92,236 84,252" fill="none" stroke="var(--leaf)" stroke-width="6"
+                        stroke-linecap="round" />
+                    <g transform="translate(128,166)">
+                        <g fill="var(--petal)">
+                            <ellipse rx="13" ry="26" transform="rotate(0)" />
+                            <ellipse rx="13" ry="26" transform="rotate(45)" />
+                            <ellipse rx="13" ry="26" transform="rotate(90)" />
+                            <ellipse rx="13" ry="26" transform="rotate(135)" />
+                            <ellipse rx="13" ry="26" transform="rotate(180)" />
+                            <ellipse rx="13" ry="26" transform="rotate(225)" />
+                            <ellipse rx="13" ry="26" transform="rotate(270)" />
+                            <ellipse rx="13" ry="26" transform="rotate(315)" />
+                        </g>
+                        <circle r="15" fill="var(--petal-dark)" />
+                        <circle r="15" fill="none" stroke="var(--petal-deep)" stroke-width="1.5"
+                            stroke-dasharray="2 3" />
+                    </g>
+                </g>
+
+                <g class="stem">
+                    <path d="M210,300 C214,240 208,196 214,150" fill="none" stroke="var(--leaf-dark)" stroke-width="6"
+                        stroke-linecap="round" />
+                    <path d="M212,220 C232,212 246,222 256,238" fill="none" stroke="var(--leaf)" stroke-width="7"
+                        stroke-linecap="round" />
+                    <g transform="translate(214,136)">
+                        <!-- yellow lily: 6 pointed petals + stamens -->
+                        <g fill="var(--petal)">
+                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(0)" />
+                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(60)" />
+                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(120)" />
+                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(180)" />
+                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(240)" />
+                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(300)" />
+                        </g>
+                        <g stroke="var(--petal-dark)" stroke-width="2" stroke-linecap="round" fill="none">
+                            <line x1="0" y1="0" x2="0" y2="-26" transform="rotate(15)" />
+                            <line x1="0" y1="0" x2="0" y2="-24" transform="rotate(-20)" />
+                            <line x1="0" y1="0" x2="0" y2="-27" transform="rotate(50)" />
+                            <line x1="0" y1="0" x2="0" y2="-23" transform="rotate(-55)" />
+                            <line x1="0" y1="0" x2="0" y2="-25" transform="rotate(100)" />
+                            <line x1="0" y1="0" x2="0" y2="-25" transform="rotate(-100)" />
+                        </g>
+                        <g fill="var(--petal-dark)">
+                            <circle cx="0" cy="-26" r="2.6" transform="rotate(15)" />
+                            <circle cx="0" cy="-24" r="2.6" transform="rotate(-20)" />
+                            <circle cx="0" cy="-27" r="2.6" transform="rotate(50)" />
+                            <circle cx="0" cy="-23" r="2.6" transform="rotate(-55)" />
+                            <circle cx="0" cy="-25" r="2.6" transform="rotate(100)" />
+                            <circle cx="0" cy="-25" r="2.6" transform="rotate(-100)" />
+                        </g>
+                        <circle r="4" fill="var(--leaf-dark)" />
+                    </g>
+                </g>
+
+                <g class="stem">
+                    <path d="M300,300 C296,244 302,204 296,164" fill="none" stroke="var(--leaf-dark)" stroke-width="6"
+                        stroke-linecap="round" />
+                    <path d="M298,226 C280,220 266,230 258,246" fill="none" stroke="var(--leaf)" stroke-width="7"
+                        stroke-linecap="round" />
+                    <g transform="translate(296,150)">
+                        <g fill="var(--petal)">
+                            <ellipse rx="15" ry="30" transform="rotate(0)" />
+                            <ellipse rx="15" ry="30" transform="rotate(40)" />
+                            <ellipse rx="15" ry="30" transform="rotate(80)" />
+                            <ellipse rx="15" ry="30" transform="rotate(120)" />
+                            <ellipse rx="15" ry="30" transform="rotate(160)" />
+                            <ellipse rx="15" ry="30" transform="rotate(200)" />
+                            <ellipse rx="15" ry="30" transform="rotate(240)" />
+                            <ellipse rx="15" ry="30" transform="rotate(280)" />
+                            <ellipse rx="15" ry="30" transform="rotate(320)" />
+                        </g>
+                        <circle r="17" fill="var(--petal-dark)" />
+                        <circle r="17" fill="none" stroke="var(--petal-deep)" stroke-width="1.5"
+                            stroke-dasharray="2 3" />
+                    </g>
+                </g>
+
+                <g class="stem">
+                    <path d="M390,300 C386,252 392,214 386,182" fill="none" stroke="var(--leaf-dark)" stroke-width="5"
+                        stroke-linecap="round" />
+                    <path d="M388,240 C408,234 420,244 428,258" fill="none" stroke="var(--leaf)" stroke-width="6"
+                        stroke-linecap="round" />
+                    <g transform="translate(386,170)">
+                        <!-- yellow lily: 6 pointed petals + stamens -->
+                        <g fill="var(--petal)">
+                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(0)" />
+                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(60)" />
+                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(120)" />
+                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(180)" />
+                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(240)" />
+                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(300)" />
+                        </g>
+                        <g stroke="var(--petal-dark)" stroke-width="1.6" stroke-linecap="round" fill="none">
+                            <line x1="0" y1="0" x2="0" y2="-20" transform="rotate(15)" />
+                            <line x1="0" y1="0" x2="0" y2="-19" transform="rotate(-20)" />
+                            <line x1="0" y1="0" x2="0" y2="-21" transform="rotate(50)" />
+                            <line x1="0" y1="0" x2="0" y2="-18" transform="rotate(-55)" />
+                            <line x1="0" y1="0" x2="0" y2="-19" transform="rotate(100)" />
+                            <line x1="0" y1="0" x2="0" y2="-19" transform="rotate(-100)" />
+                        </g>
+                        <g fill="var(--petal-dark)">
+                            <circle cx="0" cy="-20" r="2" transform="rotate(15)" />
+                            <circle cx="0" cy="-19" r="2" transform="rotate(-20)" />
+                            <circle cx="0" cy="-21" r="2" transform="rotate(50)" />
+                            <circle cx="0" cy="-18" r="2" transform="rotate(-55)" />
+                            <circle cx="0" cy="-19" r="2" transform="rotate(100)" />
+                            <circle cx="0" cy="-19" r="2" transform="rotate(-100)" />
+                        </g>
+                        <circle r="3" fill="var(--leaf-dark)" />
+                    </g>
+                </g>
+
+                <g class="stem">
+                    <path d="M460,300 C463,262 458,232 462,206" fill="none" stroke="var(--leaf-dark)" stroke-width="4"
+                        stroke-linecap="round" />
+                    <g transform="translate(462,196)">
+                        <g fill="var(--petal)">
+                            <ellipse rx="10" ry="20" transform="rotate(0)" />
+                            <ellipse rx="10" ry="20" transform="rotate(45)" />
+                            <ellipse rx="10" ry="20" transform="rotate(90)" />
+                            <ellipse rx="10" ry="20" transform="rotate(135)" />
+                            <ellipse rx="10" ry="20" transform="rotate(180)" />
+                            <ellipse rx="10" ry="20" transform="rotate(225)" />
+                            <ellipse rx="10" ry="20" transform="rotate(270)" />
+                            <ellipse rx="10" ry="20" transform="rotate(315)" />
+                        </g>
+                        <circle r="12" fill="var(--petal-dark)" />
+                    </g>
+                </g>
+            </svg>
+
+            <span class="petal-fall" style="left:12%;animation-duration:7s;">❀</span>
+            <span class="petal-fall" style="left:38%;animation-duration:9s;animation-delay:1.5s;">❀</span>
+            <span class="petal-fall" style="left:64%;animation-duration:8s;animation-delay:3s;">❀</span>
+            <span class="petal-fall" style="left:84%;animation-duration:10s;animation-delay:.5s;">❀</span>
+        </div>
+
+        <p class="eyebrow">4 de octubre</p>
+        <h1>Para Monserratt</h1>
+
+        <div class="date-badge">🌼 Mensajito del día</div>
+
+        <div class="divider"></div>
+
+        <div class="letter">
+            <p class="greeting">Hola preciosa,</p>
+
+            <p class="dropcap">Hoy desperté y sentí una sensación distinta, sé que se debe a lo que conversamos anoche. Amo poder
+                estar como estábamos desde hace un tiempo, y eso no implica que uno olvide las cosas o me haga el tonto, jamás es
+                así. Hasta el día de hoy, a veces la rabia me invade a mí mismo, o la pena me acompaña también. Pero una vez me
+                dijeron que no se trata de lo que estamos hechos, sino de lo que tenemos por dentro, y siento que el amor que tengo
+                hacia ti es tan real que lucha y se hace un espacio dentro del dolor. Amo poder entregarte ese sentimiento en cada
+                instante, aun cuando sé que me duele, porque daría lo que fuera por estar contigo ahora, o por dormir contigo una
+                vez más.</p>
+            
+            <p>Solo quiero que también pienses en cómo han cambiado las cosas desde que nos volvimos a ver hasta ahora. Sé que eso
+                te ha llegado a asustar, pero quiero que lo tomes como el claro ejemplo de que el amor, el cariño, el afecto, todo
+                lo que lleva ese sentimiento, también puede ocupar un lugar dentro del dolor. Las cosas no se olvidan, se aprende a
+                vivir con ellas, y ojalá sea para mejorar, no para que una persona empeore. Si fuera al revés, nadie en esta tierra
+                podría vivir o sonreír, cargando con los errores o los dolores del pasado. Y yo siento que en este tiempo le hicimos espacio a
+                ese cariño, a esa conexión que tenemos.</p>
+            
+            <p>Porque no se trata solo de mirar lo malo, porque hay cosas muy hermosas que tenemos los dos. Y a pesar de todo, esa
+                conexión y esos momentos no se van, es algo raro, pero es como si nos llamáramos para saber del otro aun cuando
+                pueda estar presente el odio o el rechazo. Date cuenta de eso también. Hasta en los besos lo he podido notar: desde
+                que nos volvimos a encontrar ese miércoles, se sentía el frío o el rechazo, pero en este último tiempo sé que tú
+                también notaste ese cariño, ese gustito en los besos. Porque el cariño también puede ocupar lugar y ser más grande
+                que el dolor. Eso lo aprendí de la gente que me aconsejó en el momento en que sentía que era la peor basura del
+                mundo.</p>
+            
+            <p>Por eso es que, a pesar de que hables con otros hombres, hagas lo que hagas con ellos, te gusten o no, o me odies, me
+                insultes, me hieras, el amor que te tengo es más grande y sigo ahí, golpe tras golpe, lágrima tras lágrima,
+                aguantando por el amor que tengo, aun cuando tu postura quizás solo sea carnal. Esta es mi forma de demostrarte que
+                lo que siento por ti es real, que lo di todo por ti y lo sigo haciendo aun cuando no somos nada. Las
+                acciones hablan ahora, no mis palabras.</p>
+            
+            <p>Al final del día podrás cuestionarlo, no creerme, o lo que quieras, pero ante los ojos del mundo nadie puede
+                cuestionar mi locura por ti. Porque yo he decidido que la mujer que quiero en mi vida eres tú, a la que algún día
+                quisiera llevar al altar, y no importa si me tengo que ganar al mundo entero para que sea así. Y si fallo, será
+                porque tú lo quisiste así, pero no podrás decir que no lo intenté, que no di una pelea monumental que recordarás,
+                dirás lo loco que llegué a ser.</p>
+            
+            <p>Quiero disfrutar este momento que la vida me regala contigo, y esta vez amo hacer las cosas bien, ser sincero,
+                expresarte lo que realmente siento sin miedo a la incomodidad, o a pensar qué dirán. Porque a pesar de que todos
+                saben lo que hice, también saben cuánto me arrepiento, y cuánto amor tengo todavía por ti. Eres tú por quien seré
+                mejor, aun cuando estés o no estés a mi lado. Seré lo que siempre quisiste que fuera, y te demostraré que las
+                personas sí pueden ser mejores, y esta es una oportunidad. Cada cosa que haga contigo, y así será siempre, lo haré
+                con tanto amor e intensidad que, cuando vuelvan los recuerdos de lo que pasó, también estarán ahí los recuerdos y la
+                satisfacción de saber que un día más pude expresarte lo que siento.</p>
+            
+            <p>Tengo tanto más que contarte, pero las lágrimas me ganan, y tengo que ir a trabajar jajaj. Cuídate mucho y que tengas un
+                lindo día preciosa. Gracias por ser tú, de quien me enamoré de una forma que me llegó a asustar, porque no conocí
+                algo así, y me hace feliz saber que escogí a la persona correcta, que escogí a la persona con la que siento que la
+                conexión es única. Gracias.</p>
+
+
+
+         
+            
+
+            <div class="signoff">
+                <p class="care-line">Con todo mi cariño,</p>
+                <p class="from-line">Joaquin</p>
+            </div>
+        </div>
+
+        <footer>hecho para ti</footer>
+    </div>
+</body>
+
+</html>
