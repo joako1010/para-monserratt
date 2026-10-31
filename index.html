@@ -1,59 +1,54 @@
-a<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Para Monserrat</title>
-    <meta name="description" content="Algo especial para el 21 de septiembre.">
+    <title>Para Monserratt</title>
+    <meta name="description" content="Un jardín de flores, solo para ti.">
 
-    <!-- Icono de la pestaña del navegador (favicon), una florecita amarilla -->
+    <!-- Icono de la pestaña: un tulipán rojo sobre celeste -->
     <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%232e2444'/%3E%3Cg fill='%23f6c453'%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(0 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(45 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(90 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='4' ry='9' transform='rotate(135 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='4' fill='%23b9752a'/%3E%3C/svg%3E">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23cfeefe'/%3E%3Cpath d='M16 30 L16 18' stroke='%234f7f47' stroke-width='2'/%3E%3Cpath d='M16 20 C9 19 8 10 10 5 C12 8 14 8 16 6 C18 8 20 8 22 5 C24 10 23 19 16 20Z' fill='%23d62839'/%3E%3C/svg%3E">
 
-    <!--
-  ETIQUETAS OPEN GRAPH
-  Esto es lo que hace que, cuando mandes el link por WhatsApp o Instagram,
-  se vea una tarjeta bonita con título y descripción (como una página real),
-  en vez de solo un link pelado.
-
-  >>> UNA VEZ QUE SUBAS EL ARCHIVO Y TENGAS TU LINK FINAL (ej: https://para-monserrat.netlify.app),
-      REEMPLAZA "PON_AQUI_TU_LINK" DE LA LÍNEA DE ABAJO POR ESE LINK. <<<
--->
+    <!-- Tarjeta bonita al compartir el link por WhatsApp / Instagram -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Para ti 🌼">
-    <meta property="og:description" content="Algo especial para el 21 de septiembre.">
+    <meta property="og:title" content="Para ti 🌷">
+    <meta property="og:description" content="Un jardín de flores, solo para ti.">
     <meta property="og:url" content="https://joako1010.github.io/para-monserratt/">
     <meta name="twitter:card" content="summary">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
-            --ground-top: #241a38;
-            --ground-bot: #4a2f52;
-            --petal: #f6c453;
-            --petal-deep: #dd9a3b;
-            --petal-dark: #b9752a;
-            --leaf: #5c8a56;
-            --leaf-dark: #3e6339;
-            --ink: #fff8ec;
-            --ink-soft: #e6d6c2;
-            --card: #00000026;
-            --rule: #f6c45355;
+            --sky-top: #a9dcf7;
+            --sky-mid: #d3effc;
+            --sky-bot: #f2fbff;
+            --ink: #23405f;
+            --ink-soft: #4a6784;
+            --accent: #d9577a;
+            --accent-soft: #f6c9d3;
+            --card: rgba(255, 255, 255, .62);
+            --rule: rgba(217, 87, 122, .28);
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; }
 
         body {
+            min-height: 100vh;
             background:
-                radial-gradient(ellipse 70% 40% at 50% 0%, #6b3d5a55, transparent 60%),
-                linear-gradient(180deg, var(--ground-top) 0%, var(--ground-bot) 100%);
+                radial-gradient(ellipse 40% 12% at 18% 9%, rgba(255,255,255,.85), transparent 70%),
+                radial-gradient(ellipse 32% 9% at 30% 13%, rgba(255,255,255,.7), transparent 70%),
+                radial-gradient(ellipse 38% 11% at 82% 20%, rgba(255,255,255,.8), transparent 70%),
+                radial-gradient(ellipse 28% 8% at 70% 24%, rgba(255,255,255,.6), transparent 70%),
+                linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-bot) 100%);
+            background-attachment: fixed;
             color: var(--ink);
             font-family: 'Lora', Georgia, 'Times New Roman', serif;
             padding-inline: 20px;
@@ -63,154 +58,166 @@ a<!DOCTYPE html>
         .wrap {
             max-width: 640px;
             margin: 0 auto;
-            padding-block: 56px 72px;
+            padding-block: 40px 72px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        /* ---------- Garden hero ---------- */
+        /* ---------- Ramo ---------- */
         .garden {
             width: 100%;
-            max-width: 520px;
-            aspect-ratio: 16/11;
+            max-width: 620px;
             position: relative;
-            margin-bottom: 8px;
         }
 
-        .garden svg {
-            width: 100%;
-            height: 100%;
-            display: block;
+        .garden svg { width: 100%; height: auto; display: block; overflow: visible;
+            -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 82%, transparent 100%); }
+
+        .flower { cursor: pointer; }
+
+        .pop {
+            transform-box: fill-box;
+            transform-origin: 50% 100%;
+            animation: popIn .9s cubic-bezier(.34, 1.56, .64, 1) both;
         }
 
-        .stem {
-            transform-origin: bottom center;
+        .sway {
+            transform-box: fill-box;
+            transform-origin: 50% 100%;
             animation: sway 5.5s ease-in-out infinite;
+            transition: filter .3s;
         }
 
-        .stem:nth-of-type(1) {
-            animation-delay: 0s;
-        }
+        .flower:hover .sway,
+        .flower.picked .sway { filter: brightness(1.08) drop-shadow(0 0 6px rgba(255, 255, 255, .9)); }
 
-        .stem:nth-of-type(2) {
-            animation-delay: .6s;
-            animation-duration: 6.2s;
-        }
-
-        .stem:nth-of-type(3) {
-            animation-delay: 1.1s;
-            animation-duration: 4.9s;
-        }
-
-        .stem:nth-of-type(4) {
-            animation-delay: .3s;
-            animation-duration: 5.8s;
-        }
-
-        .stem:nth-of-type(5) {
-            animation-delay: .9s;
-            animation-duration: 5.1s;
+        @keyframes popIn {
+            from { transform: scaleY(0); opacity: 0; }
+            to { transform: scaleY(1); opacity: 1; }
         }
 
         @keyframes sway {
-
-            0%,
-            100% {
-                transform: rotate(-2.5deg);
-            }
-
-            50% {
-                transform: rotate(2.5deg);
-            }
+            0%, 100% { transform: rotate(-2.5deg); }
+            50% { transform: rotate(2.5deg); }
         }
 
-        @media (prefers-reduced-motion: reduce) {
+        .wing { animation: flap .35s ease-in-out infinite alternate; transform-origin: 0 0; }
+        .wing.r { animation-name: flapR; }
+        @keyframes flap { to { transform: scaleX(.35); } }
+        @keyframes flapR { to { transform: scaleX(.35); } }
 
-            .stem,
-            .petal-fall {
-                animation: none !important;
-            }
-        }
-
-        /* falling petals */
+        /* pétalos y florcitas que caen */
         .petal-fall {
             position: absolute;
-            top: -6%;
-            font-size: 14px;
+            top: -4%;
+            pointer-events: none;
             animation: fall linear infinite;
-            opacity: .85;
-            color: var(--petal);
-            filter: drop-shadow(0 1px 1px #00000030);
+            opacity: 0;
         }
 
         @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: .85;
-            }
-
-            100% {
-                transform: translateY(340px) rotate(230deg);
-                opacity: 0;
-            }
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: .9; }
+            50% { transform: translate(14px, 190px) rotate(120deg); }
+            100% { transform: translate(-6px, 380px) rotate(260deg); opacity: 0; }
         }
 
-        /* ---------- Type ---------- */
+        /* nota que aparece al tocar una flor */
+        .note {
+            min-height: 74px;
+            max-width: 440px;
+            margin: 2px auto 14px;
+            padding: 12px 18px;
+            text-align: center;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .5);
+            border: 1px dashed var(--rule);
+            transition: opacity .35s, transform .35s;
+        }
+
+        .note.swap { opacity: 0; transform: translateY(6px); }
+        .note b {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+        .note span { font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+
+        .counter { margin: -6px 0 6px; font-size: 13px; color: var(--accent); min-height: 18px; letter-spacing: .03em; }
+
+        /* ---------- Texto ---------- */
         .eyebrow {
             font-family: 'Cormorant Garamond', 'Lora', serif;
-            letter-spacing: .14em;
+            letter-spacing: .16em;
             text-transform: uppercase;
             font-size: 13px;
             color: var(--ink-soft);
-            margin: 0 0 6px;
+            margin: 6px 0 6px;
         }
 
         h1 {
             font-family: 'Playfair Display', Georgia, serif;
             font-style: italic;
             font-weight: 600;
-            font-size: clamp(30px, 6vw, 44px);
+            font-size: clamp(32px, 7vw, 48px);
             line-height: 1.1;
             text-align: center;
-            text-wrap: balance;
             margin: 0 0 4px;
             color: var(--ink);
         }
+
+        h1 .heart { color: var(--accent); font-style: normal; display: inline-block; animation: beat 1.6s ease-in-out infinite; }
+        @keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.22); } 30% { transform: scale(1); } 45% { transform: scale(1.12); } }
 
         .date-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             margin: 14px auto 8px;
-            padding: 7px 16px;
+            padding: 8px 18px;
             border: 1px solid var(--rule);
             border-radius: 999px;
             font-size: 13px;
-            letter-spacing: .05em;
-            color: var(--petal);
-            background: var(--card);
+            letter-spacing: .03em;
+            color: var(--accent);
+            background: rgba(255, 255, 255, .6);
+            text-align: center;
         }
 
         .divider {
-            width: 64px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--petal), transparent);
-            margin: 28px auto 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 26px auto 28px;
+            color: var(--accent);
+            font-size: 12px;
         }
+        .divider::before, .divider::after {
+            content: "";
+            width: 54px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent));
+        }
+        .divider::after { background: linear-gradient(90deg, var(--accent), transparent); }
 
-        /* ---------- Letter ---------- */
+        /* ---------- Carta ---------- */
         .letter {
             width: 100%;
             background: var(--card);
-            border: 1px solid var(--rule);
-            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .9);
+            border-radius: 20px;
             padding: clamp(24px, 5vw, 44px);
-            backdrop-filter: blur(2px);
+            box-shadow: 0 10px 40px -18px rgba(35, 64, 95, .35);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
 
         .letter p {
@@ -220,14 +227,10 @@ a<!DOCTYPE html>
             margin: 0 0 20px;
         }
 
-        .letter p:last-of-type {
-            margin-bottom: 0;
-        }
-
         .letter .greeting {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 22px;
+            font-size: 23px;
             color: var(--ink);
             margin-bottom: 22px;
         }
@@ -238,225 +241,203 @@ a<!DOCTYPE html>
             line-height: .8;
             float: left;
             padding: .05em .08em 0 0;
-            color: var(--petal);
+            color: var(--accent);
         }
 
-        .signoff {
-            margin-top: 30px;
-            text-align: right;
-        }
-
+        .signoff { margin-top: 30px; text-align: right; }
+        .signoff .care-line { font-size: 15px; color: var(--ink-soft); margin: 0; }
         .signoff .from-line {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 22px;
-            color: var(--petal);
+            font-size: 24px;
+            color: var(--accent);
             margin: 2px 0 0;
-        }
-
-        .signoff .care-line {
-            font-size: 15px;
-            color: var(--ink-soft);
         }
 
         footer {
             margin-top: 40px;
             font-size: 12px;
-            letter-spacing: .08em;
+            letter-spacing: .1em;
             text-transform: uppercase;
             color: var(--ink-soft);
-            opacity: .6;
+            opacity: .75;
             text-align: center;
         }
 
-        @media (max-width:420px) {
-            .letter p {
-                font-size: 16px;
-            }
+        /* ---------- Corazoncitos ---------- */
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .heart-float {
+            position: absolute;
+            line-height: 1;
+            animation: heartUp var(--dur, 4s) ease-out forwards;
+            text-shadow: 0 1px 2px rgba(35, 64, 95, .15);
+        }
+
+        @keyframes heartUp {
+            0% { transform: translate(0, 0) scale(.3) rotate(0deg); opacity: 0; }
+            15% { opacity: .95; transform: translate(calc(var(--dx) * .3), -15px) scale(1) rotate(calc(var(--rot) * .3)); }
+            55% { transform: translate(calc(var(--dx) * -.4), calc(var(--dy) * .55)) scale(1) rotate(calc(var(--rot) * -.5)); }
+            100% { transform: translate(var(--dx), var(--dy)) scale(.6) rotate(var(--rot)); opacity: 0; }
+        }
+
+        @media (max-width: 420px) {
+            .letter p { font-size: 16px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sway, .pop, .petal-fall, .wing, h1 .heart { animation: none !important; }
+            .hearts { display: none; }
         }
     </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
+    <div class="hearts" aria-hidden="true"></div>
+
     <div class="wrap">
 
-        <div class="garden" aria-hidden="true">
-            <svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="glow" cx="50%" cy="30%" r="60%">
-                        <stop offset="0%" stop-color="#f6c45333" />
-                        <stop offset="100%" stop-color="#f6c45300" />
-                    </radialGradient>
-                </defs>
-                <ellipse cx="260" cy="120" rx="220" ry="140" fill="url(#glow)" />
+        <div class="garden">
+            
+<svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Un jardín con rosas, tulipanes de colores, margaritas, lirios, girasoles y paniculata">
 
-                <!-- ground line -->
-                <path d="M0,300 Q130,285 260,298 T520,296" fill="none" stroke="#00000022" stroke-width="2" />
+<defs>
+  <linearGradient id="lilyGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-46">
+    <stop offset="0" stop-color="#c2255c"/>
+    <stop offset=".55" stop-color="#f06595"/>
+    <stop offset="1" stop-color="#fff0f5"/>
+  </linearGradient>
+  <linearGradient id="edgeFade" x1="0" x2="1" y1="0" y2="0">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".07" stop-color="#fff"/>
+    <stop offset=".93" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="groundMask" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="380"><rect width="600" height="380" fill="url(#edgeFade)"/></mask>
+  <radialGradient id="halo" cx="50%" cy="45%" r="55%">
+    <stop offset="0" stop-color="#ffffff" stop-opacity=".75"/>
+    <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+  
+<g id="sunflower">
+  <g fill="#e39a0c"><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(12.9)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(38.6)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(64.3)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(90.0)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(115.7)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(141.4)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(167.1)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(192.9)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(218.6)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(244.3)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(270.0)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(295.7)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(321.4)"/><ellipse cx="0" cy="-27" rx="7" ry="19" transform="rotate(347.1)"/></g>
+  <g fill="#f9c41f"><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(0.0)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(25.7)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(51.4)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(77.1)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(102.9)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(128.6)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(154.3)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(180.0)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(205.7)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(231.4)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(257.1)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(282.9)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(308.6)"/><ellipse cx="0" cy="-26" rx="6.5" ry="20" transform="rotate(334.3)"/></g>
+  <circle r="18" fill="#6e4520"/>
+  <circle r="13" fill="#4a2c14"/>
+  <circle r="15.5" fill="none" stroke="#9a6630" stroke-width="2" stroke-dasharray="1.5 2.6"/>
+  <circle r="9" fill="none" stroke="#7a4d22" stroke-width="1.6" stroke-dasharray="1.2 2.2"/>
+</g>
+<g id="daisy">
+  <g fill="#ffffff" stroke="#dfe7ef" stroke-width=".6"><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(0.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(20.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(40.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(60.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(80.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(100.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(120.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(140.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(160.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(180.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(200.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(220.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(240.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(260.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(280.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(300.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(320.0)"/><ellipse cx="0" cy="-13" rx="3.6" ry="11.5" transform="rotate(340.0)"/></g>
+  <circle r="6.5" fill="#f4c430"/>
+  <circle r="6.5" fill="none" stroke="#d99a16" stroke-width="1.2" stroke-dasharray="1 1.6"/>
+</g>
+<g id="tulip">
+  <path d="M0,0 C-17,-4 -21,-27 -14,-46 C-8,-37 -4,-35 0,-42 C4,-35 8,-37 14,-46 C21,-27 17,-4 0,0Z" fill="currentColor" stroke="#000" stroke-opacity=".1" stroke-width=".8"/>
+  <path d="M0,0 C-10,-6 -10,-30 0,-42 C10,-30 10,-6 0,0Z" fill="#000" opacity=".13"/>
+  <path d="M-10,-9 C-14,-19 -13,-31 -10,-39" stroke="#fff" stroke-opacity=".4" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+</g><g id="lily"><g transform="rotate(0)"><path d="M0,-2 C-12,-18 -9,-35 0,-46 C9,-35 12,-18 0,-2Z" fill="url(#lilyGrad)" stroke="#f3b3c8" stroke-width=".6"/><path d="M0,-6 L0,-38" stroke="#fff" stroke-opacity=".7" stroke-width="1.2"/><circle cx="-3" cy="-14" r="1" fill="#8e1846"/><circle cx="3" cy="-18" r="1" fill="#8e1846"/><circle cx="-2" cy="-22" r=".9" fill="#8e1846"/></g><g transform="rotate(60)"><path d="M0,-2 C-12,-18 -9,-35 0,-46 C9,-35 12,-18 0,-2Z" fill="url(#lilyGrad)" stroke="#f3b3c8" stroke-width=".6"/><path d="M0,-6 L0,-38" stroke="#fff" stroke-opacity=".7" stroke-width="1.2"/><circle cx="-3" cy="-14" r="1" fill="#8e1846"/><circle cx="3" cy="-18" r="1" fill="#8e1846"/><circle cx="-2" cy="-22" r=".9" fill="#8e1846"/></g><g transform="rotate(120)"><path d="M0,-2 C-12,-18 -9,-35 0,-46 C9,-35 12,-18 0,-2Z" fill="url(#lilyGrad)" stroke="#f3b3c8" stroke-width=".6"/><path d="M0,-6 L0,-38" stroke="#fff" stroke-opacity=".7" stroke-width="1.2"/><circle cx="-3" cy="-14" r="1" fill="#8e1846"/><circle cx="3" cy="-18" r="1" fill="#8e1846"/><circle cx="-2" cy="-22" r=".9" fill="#8e1846"/></g><g transform="rotate(180)"><path d="M0,-2 C-12,-18 -9,-35 0,-46 C9,-35 12,-18 0,-2Z" fill="url(#lilyGrad)" stroke="#f3b3c8" stroke-width=".6"/><path d="M0,-6 L0,-38" stroke="#fff" stroke-opacity=".7" stroke-width="1.2"/><circle cx="-3" cy="-14" r="1" fill="#8e1846"/><circle cx="3" cy="-18" r="1" fill="#8e1846"/><circle cx="-2" cy="-22" r=".9" fill="#8e1846"/></g><g transform="rotate(240)"><path d="M0,-2 C-12,-18 -9,-35 0,-46 C9,-35 12,-18 0,-2Z" fill="url(#lilyGrad)" stroke="#f3b3c8" stroke-width=".6"/><path d="M0,-6 L0,-38" stroke="#fff" stroke-opacity=".7" stroke-width="1.2"/><circle cx="-3" cy="-14" r="1" fill="#8e1846"/><circle cx="3" cy="-18" r="1" fill="#8e1846"/><circle cx="-2" cy="-22" r=".9" fill="#8e1846"/></g><g transform="rotate(300)"><path d="M0,-2 C-12,-18 -9,-35 0,-46 C9,-35 12,-18 0,-2Z" fill="url(#lilyGrad)" stroke="#f3b3c8" stroke-width=".6"/><path d="M0,-6 L0,-38" stroke="#fff" stroke-opacity=".7" stroke-width="1.2"/><circle cx="-3" cy="-14" r="1" fill="#8e1846"/><circle cx="3" cy="-18" r="1" fill="#8e1846"/><circle cx="-2" cy="-22" r=".9" fill="#8e1846"/></g><g transform="rotate(20)"><line x1="0" y1="0" x2="0" y2="-24" stroke="#e7d9a8" stroke-width="1.3"/><ellipse cx="0" cy="-24" rx="1.8" ry="3.2" fill="#b5531d"/></g><g transform="rotate(-25)"><line x1="0" y1="0" x2="0" y2="-22" stroke="#e7d9a8" stroke-width="1.3"/><ellipse cx="0" cy="-22" rx="1.8" ry="3.2" fill="#b5531d"/></g><g transform="rotate(75)"><line x1="0" y1="0" x2="0" y2="-25" stroke="#e7d9a8" stroke-width="1.3"/><ellipse cx="0" cy="-25" rx="1.8" ry="3.2" fill="#b5531d"/></g><g transform="rotate(-80)"><line x1="0" y1="0" x2="0" y2="-23" stroke="#e7d9a8" stroke-width="1.3"/><ellipse cx="0" cy="-23" rx="1.8" ry="3.2" fill="#b5531d"/></g><g transform="rotate(130)"><line x1="0" y1="0" x2="0" y2="-22" stroke="#e7d9a8" stroke-width="1.3"/><ellipse cx="0" cy="-22" rx="1.8" ry="3.2" fill="#b5531d"/></g><g transform="rotate(-140)"><line x1="0" y1="0" x2="0" y2="-24" stroke="#e7d9a8" stroke-width="1.3"/><ellipse cx="0" cy="-24" rx="1.8" ry="3.2" fill="#b5531d"/></g><circle r="3.5" fill="#9cc47a"/></g><g id="gyp"><g stroke="#7fa874" stroke-width=".9" fill="none" stroke-linecap="round"><path d="M0,30 Q-4.0,12 -8,-4"/><path d="M0,30 Q3.0,12 6,-6"/><path d="M0,30 Q0.0,12 0,-14"/><line x1="-8" y1="-4" x2="-3.7" y2="-4.2"/><line x1="6" y1="-6" x2="3.1" y2="-2.8"/><line x1="0" y1="-14" x2="1.4" y2="-8.9"/><line x1="-8" y1="-4" x2="-13.9" y2="-4.9"/><line x1="-8" y1="-4" x2="-13.2" y2="-3.4"/><line x1="-8" y1="-4" x2="-7.5" y2="-0.2"/><line x1="0" y1="-14" x2="-3.3" y2="-17.5"/><line x1="-8" y1="-4" x2="-8.5" y2="-2.8"/><line x1="0" y1="-14" x2="7.4" y2="-18.9"/><line x1="6" y1="-6" x2="2.8" y2="-9.3"/><line x1="6" y1="-6" x2="7.6" y2="1.4"/><line x1="6" y1="-6" x2="9.4" y2="-3.7"/><line x1="-8" y1="-4" x2="-6.8" y2="-1.7"/><line x1="0" y1="-14" x2="-8.7" y2="-15.8"/><line x1="-8" y1="-4" x2="-11.5" y2="-9.2"/><line x1="6" y1="-6" x2="4.6" y2="-8.3"/><line x1="6" y1="-6" x2="1.1" y2="-3.1"/></g><g fill="#ffffff" stroke="#e3e9ef" stroke-width=".5"><circle cx="-3.7" cy="-4.2" r="1.9"/><circle cx="-2.6" cy="-5.5" r="1.5"/><circle cx="3.1" cy="-2.8" r="2.1"/><circle cx="1.4" cy="-8.9" r="2.3"/><circle cx="3.2" cy="-9.1" r="1.5"/><circle cx="-13.9" cy="-4.9" r="2.1"/><circle cx="-13.2" cy="-3.4" r="2.4"/><circle cx="-7.5" cy="-0.2" r="2.6"/><circle cx="-4.6" cy="-2.7" r="1.5"/><circle cx="-3.3" cy="-17.5" r="2.3"/><circle cx="-8.5" cy="-2.8" r="2.0"/><circle cx="-11.3" cy="-3.1" r="1.5"/><circle cx="7.4" cy="-18.9" r="2.6"/><circle cx="2.8" cy="-9.3" r="2.8"/><circle cx="4.0" cy="-9.9" r="1.5"/><circle cx="7.6" cy="1.4" r="2.4"/><circle cx="9.6" cy="2.1" r="1.5"/><circle cx="9.4" cy="-3.7" r="2.3"/><circle cx="-6.8" cy="-1.7" r="1.9"/><circle cx="-8.7" cy="-15.8" r="2.5"/><circle cx="-11.5" cy="-9.2" r="2.7"/><circle cx="-12.2" cy="-9.5" r="1.5"/><circle cx="4.6" cy="-8.3" r="1.8"/><circle cx="2.6" cy="-10.9" r="1.5"/><circle cx="1.1" cy="-3.1" r="1.9"/></g></g><g id="rose"><g fill="currentColor" stroke="#000" stroke-opacity=".16" stroke-width=".8"><circle cx="0" cy="-8.5" r="9" transform="rotate(18)"/><circle cx="0" cy="-8.5" r="9" transform="rotate(90)"/><circle cx="0" cy="-8.5" r="9" transform="rotate(162)"/><circle cx="0" cy="-8.5" r="9" transform="rotate(234)"/><circle cx="0" cy="-8.5" r="9" transform="rotate(306)"/><circle r="10.5"/></g>
+  <path d="M-1,1 C3,1 4,-3 1,-5 C-4,-7 -7,-1 -5,3 C-2,8 7,6 8,0 C9,-6 4,-10 -2,-10" fill="none" stroke="#000" stroke-opacity=".3" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M-12,-6 C-10,-13 -4,-16 2,-16" stroke="#fff" stroke-opacity=".45" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <g fill="#4f7f47"><path d="M-4,10 L0,17 L4,10Z"/><path d="M-10,8 L-9,15 L-3,10Z"/><path d="M10,8 L9,15 L3,10Z"/></g></g>
+<g id="leaf">
+  <path d="M0,0 C10,-9 32,-9 46,0 C32,9 10,9 0,0Z" fill="#5f9a57"/>
+  <path d="M2,0 L42,0" stroke="#467a40" stroke-width="1"/>
+</g>
+</defs>
+  <ellipse cx="300" cy="200" rx="300" ry="190" fill="url(#halo)"/>
+  <circle cx="540" cy="40" r="26" fill="#fff6c9" opacity=".9"/>
+  <circle cx="540" cy="40" r="40" fill="#fff6c9" opacity=".35"/>
+  <!-- loma de atrás -->
+  <g mask="url(#groundMask)"><path d="M0,300 Q150,282 300,294 T600,290 L600,380 L0,380Z" fill="#9fd07f"/>
+  <g stroke="#86bf66" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M-2,300 q-0.7,-3.9 3.0,-7.7"/><path d="M6,300 q0.3,-4.6 3.1,-9.1"/><path d="M19,301 q-1.3,-6.0 -0.7,-12.0"/><path d="M25,301 q2.7,-6.1 -2.8,-12.2"/><path d="M32,302 q-1.6,-3.8 -0.1,-7.6"/><path d="M43,302 q-3.0,-3.9 -0.6,-7.8"/><path d="M51,303 q2.7,-5.0 1.5,-10.0"/><path d="M60,303 q1.1,-5.2 -3.6,-10.3"/><path d="M71,303 q2.2,-5.7 2.4,-11.5"/><path d="M76,304 q-2.4,-4.4 1.1,-8.8"/><path d="M83,304 q-1.7,-3.2 -2.7,-6.5"/><path d="M93,304 q-3.0,-3.2 -2.8,-6.4"/><path d="M100,304 q-2.8,-4.3 3.0,-8.5"/><path d="M112,305 q-1.5,-3.5 -1.2,-7.0"/><path d="M119,305 q2.1,-3.4 3.9,-6.9"/><path d="M128,305 q-2.5,-4.7 -3.2,-9.4"/><path d="M136,305 q2.0,-3.9 -2.7,-7.9"/><path d="M143,305 q0.2,-6.3 -2.8,-12.7"/><path d="M155,305 q0.2,-3.1 3.8,-6.2"/><path d="M165,305 q-1.4,-5.4 -1.1,-10.9"/><path d="M169,305 q0.2,-5.7 2.2,-11.4"/><path d="M179,305 q1.9,-3.8 3.9,-7.6"/><path d="M191,305 q1.9,-5.8 1.9,-11.6"/><path d="M196,304 q-0.9,-4.8 -3.8,-9.6"/><path d="M203,304 q-1.4,-4.0 1.5,-8.0"/><path d="M217,304 q2.6,-4.6 3.9,-9.1"/><path d="M226,303 q-1.7,-4.3 -2.2,-8.6"/><path d="M230,303 q0.7,-3.7 3.2,-7.4"/><path d="M242,303 q0.9,-4.7 2.4,-9.4"/><path d="M246,303 q2.5,-5.3 2.3,-10.6"/><path d="M259,302 q-1.9,-4.7 2.3,-9.3"/><path d="M265,302 q2.8,-5.8 -0.8,-11.6"/><path d="M274,301 q1.3,-6.3 -2.6,-12.6"/><path d="M281,301 q2.4,-3.5 2.5,-7.1"/><path d="M289,300 q2.9,-5.9 1.3,-11.8"/><path d="M299,300 q-2.2,-4.9 -3.9,-9.8"/><path d="M311,299 q0.2,-5.3 3.5,-10.5"/><path d="M317,299 q2.0,-6.1 -2.3,-12.1"/><path d="M324,299 q-1.6,-4.0 0.7,-8.1"/><path d="M333,298 q-2.2,-4.5 3.3,-8.9"/><path d="M342,298 q0.5,-4.6 3.2,-9.2"/><path d="M351,297 q0.0,-6.2 0.3,-12.4"/><path d="M360,297 q-0.4,-3.1 -2.5,-6.1"/><path d="M366,297 q-2.0,-5.8 -0.2,-11.6"/><path d="M378,296 q-1.0,-4.9 0.1,-9.9"/><path d="M386,296 q-2.4,-5.7 0.5,-11.5"/><path d="M393,296 q1.6,-4.0 0.1,-7.9"/><path d="M403,296 q2.5,-5.7 -0.5,-11.3"/><path d="M412,295 q0.1,-4.8 1.5,-9.5"/><path d="M420,295 q-0.1,-4.9 3.5,-9.7"/><path d="M430,295 q2.7,-6.1 -1.9,-12.1"/><path d="M437,295 q2.0,-6.3 -2.9,-12.6"/><path d="M443,295 q-2.6,-4.5 -2.1,-9.1"/><path d="M452,295 q1.7,-5.3 3.2,-10.7"/><path d="M461,295 q1.0,-5.5 -2.9,-11.0"/><path d="M474,295 q-1.7,-6.4 3.6,-12.8"/><path d="M479,295 q2.9,-4.7 2.7,-9.4"/><path d="M487,295 q0.1,-4.5 -1.3,-9.0"/><path d="M495,296 q1.3,-4.1 -3.8,-8.2"/><path d="M506,296 q-2.9,-4.5 -1.3,-9.1"/><path d="M515,296 q-2.6,-4.8 3.9,-9.6"/><path d="M525,297 q-2.4,-6.4 -1.9,-12.8"/><path d="M529,297 q-1.4,-5.7 -3.0,-11.5"/><path d="M540,297 q1.9,-6.2 -1.9,-12.4"/><path d="M546,297 q0.4,-6.2 1.6,-12.4"/><path d="M555,298 q1.1,-3.2 -0.6,-6.4"/><path d="M563,298 q0.8,-6.3 2.4,-12.6"/><path d="M572,299 q-2.6,-6.0 2.9,-12.0"/><path d="M583,299 q0.3,-4.2 3.4,-8.4"/><path d="M590,300 q0.2,-3.5 -2.1,-6.9"/></g></g>
+  <g class="flower" data-name="Paniculata" data-msg="Es la que acompaña y hace lindo todo el jardín. Como tú en mis días. ✨" transform="translate(30,302)"><g class="pop" style="animation-delay:0.16s"><g class="sway" style="animation-delay:-0.5s;animation-duration:4.9s"><path d="M0,0 Q-6,-22 -14,-18" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-44) scale(0.855)"/><path d="M0,0 Q0,-29 0,-32" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-58) scale(0.855)"/><path d="M0,0 Q5,-24 13,-22" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-48) scale(0.855)"/></g></g></g>
+<g class="flower" data-name="Girasol" data-msg="Los girasoles siempre buscan el sol. Yo, sin darme cuenta, siempre te busco a ti. 🌻" transform="translate(95,300)"><g class="pop" style="animation-delay:0.22s"><g class="sway" style="animation-delay:-1.6s;animation-duration:5.2s"><path d="M0,0 Q-5.4,-92 0,-185" stroke="#4f7f47" stroke-width="3.5" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-52) rotate(-35) scale(1.01)"/><use href="#leaf" transform="translate(0,-93) scale(-1,1) rotate(-35) scale(0.91)"/><use href="#sunflower" transform="translate(0,-185) scale(0.9)"/></g></g></g>
+<g class="flower" data-name="Paniculata" data-msg="Sus florcitas son pequeñitas, pero juntas lo llenan todo. Así me pasa contigo: son tus detalles chiquititos los que me sacan una sonrisa cada día." transform="translate(205,298)"><g class="pop" style="animation-delay:0.28s"><g class="sway" style="animation-delay:-3.8s;animation-duration:5.2s"><path d="M0,0 Q-6,-27 -14,-26" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-54) scale(0.9450000000000001)"/><path d="M0,0 Q0,-36 0,-44" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-72) scale(0.9450000000000001)"/><path d="M0,0 Q5,-30 13,-31" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-59) scale(0.9450000000000001)"/></g></g></g>
+<g class="flower" data-name="Girasol" data-msg="Significa lealtad y alegría. Contigo hasta los días nublados tienen sol." transform="translate(305,298)"><g class="pop" style="animation-delay:0.34s"><g class="sway" style="animation-delay:-1.7s;animation-duration:4.5s"><path d="M0,0 Q0.0,-106 0,-212" stroke="#4f7f47" stroke-width="4.0" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-59) rotate(-35) scale(1.08)"/><use href="#leaf" transform="translate(0,-105) scale(-1,1) rotate(-35) scale(0.97)"/><use href="#sunflower" transform="translate(0,-212) scale(1.05)"/></g></g></g>
+<g class="flower" data-name="Paniculata" data-msg="Sus florcitas parecen estrellitas. Así de lindos son los detalles tuyos que guardo." transform="translate(408,298)"><g class="pop" style="animation-delay:0.40s"><g class="sway" style="animation-delay:-1.3s;animation-duration:4.5s"><path d="M0,0 Q-6,-25 -14,-22" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-50) scale(0.9)"/><path d="M0,0 Q0,-33 0,-39" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-66) scale(0.9)"/><path d="M0,0 Q5,-27 13,-27" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-54) scale(0.9)"/></g></g></g>
+<g class="flower" data-name="Girasol" data-msg="Dicen que es la flor de la felicidad. Debe ser por eso que me acuerdo de ti cuando la veo." transform="translate(512,300)"><g class="pop" style="animation-delay:0.46s"><g class="sway" style="animation-delay:-0.9s;animation-duration:5.6s"><path d="M0,0 Q2.8,-89 0,-178" stroke="#4f7f47" stroke-width="3.3" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-59) rotate(-35) scale(1.00)"/><use href="#leaf" transform="translate(0,-98) scale(-1,1) rotate(-35) scale(0.90)"/><use href="#sunflower" transform="translate(0,-178) scale(0.85)"/></g></g></g>
+<g class="flower" data-name="Paniculata" data-msg="Significa pureza de corazón. Como el tuyo, preciosa." transform="translate(572,302)"><g class="pop" style="animation-delay:0.52s"><g class="sway" style="animation-delay:-4.7s;animation-duration:4.7s"><path d="M0,0 Q-6,-21 -14,-16" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-41) scale(0.855)"/><path d="M0,0 Q0,-28 0,-29" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-55) scale(0.855)"/><path d="M0,0 Q5,-23 13,-19" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-45) scale(0.855)"/></g></g></g>
 
-                <!-- five stems: sunflowers and yellow lilies -->
-                <g class="stem">
-                    <path d="M120,300 C118,250 122,210 128,178" fill="none" stroke="var(--leaf-dark)" stroke-width="5"
-                        stroke-linecap="round" />
-                    <path d="M124,230 C104,224 92,236 84,252" fill="none" stroke="var(--leaf)" stroke-width="6"
-                        stroke-linecap="round" />
-                    <g transform="translate(128,166)">
-                        <g fill="var(--petal)">
-                            <ellipse rx="13" ry="26" transform="rotate(0)" />
-                            <ellipse rx="13" ry="26" transform="rotate(45)" />
-                            <ellipse rx="13" ry="26" transform="rotate(90)" />
-                            <ellipse rx="13" ry="26" transform="rotate(135)" />
-                            <ellipse rx="13" ry="26" transform="rotate(180)" />
-                            <ellipse rx="13" ry="26" transform="rotate(225)" />
-                            <ellipse rx="13" ry="26" transform="rotate(270)" />
-                            <ellipse rx="13" ry="26" transform="rotate(315)" />
-                        </g>
-                        <circle r="15" fill="var(--petal-dark)" />
-                        <circle r="15" fill="none" stroke="var(--petal-deep)" stroke-width="1.5"
-                            stroke-dasharray="2 3" />
-                    </g>
-                </g>
+  <g class="flower" data-name="Tulipán blanco" data-msg="Su blanco es calma. Así me siento cuando por fin te veo y estoy contigo: el día deja de ser uno más y se vuelve mi favorito." transform="translate(60,324)"><g class="pop" style="animation-delay:0.58s"><g class="sway" style="animation-delay:-2.5s;animation-duration:6.4s"><path d="M0,0 Q3.8,-46 0,-92" stroke="#4f7f47" stroke-width="3.6" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-29) rotate(-35) scale(0.78)"/><use href="#leaf" transform="translate(0,-49) scale(-1,1) rotate(-35) scale(0.70)"/><use href="#tulip" style="color:#fbfaf3" transform="translate(0,-92) scale(0.95)"/></g></g></g>
+<g class="flower" data-name="Tulipán rojo" data-msg="Es un amor especial, de esos que no se parecen a ningún otro. Así es lo que siento por ti, preciosa. 🌷" transform="translate(128,322)"><g class="pop" style="animation-delay:0.64s"><g class="sway" style="animation-delay:-3.4s;animation-duration:6.8s"><path d="M0,0 Q-1.3,-50 0,-100" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-33) rotate(-35) scale(0.80)"/><use href="#leaf" transform="translate(0,-55) scale(-1,1) rotate(-35) scale(0.72)"/><use href="#tulip" style="color:#d62839" transform="translate(0,-100) scale(1)"/></g></g></g>
+<g class="flower" data-name="Rosa roja" data-msg="La flor del amor, la más clásica de todas. Porque hay cosas que no necesitan reinventarse: te quiero. 🌹" transform="translate(165,320)"><g class="pop" style="animation-delay:0.70s"><g class="sway" style="animation-delay:-3.5s;animation-duration:6.0s"><path d="M0,0 Q-1.9,-66 0,-132" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-49) rotate(-35) scale(0.88)"/><use href="#leaf" transform="translate(0,-79) scale(-1,1) rotate(-35) scale(0.79)"/><use href="#rose" style="color:#c8102e" transform="translate(0,-132) scale(1.4)"/></g></g></g>
+<g class="flower" data-name="Lirio rosado" data-msg="Significa admiración. Y yo te admiro muchísimo, preciosa." transform="translate(205,318)"><g class="pop" style="animation-delay:0.76s"><g class="sway" style="animation-delay:-0.3s;animation-duration:4.8s"><path d="M0,0 Q-1.1,-75 0,-150" stroke="#4f7f47" stroke-width="3.5" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-45) rotate(-35) scale(0.93)"/><use href="#leaf" transform="translate(0,-78) scale(-1,1) rotate(-35) scale(0.83)"/><use href="#lily" transform="translate(0,-150) scale(0.9)"/></g></g></g>
+<g class="flower" data-name="Tulipán amarillo" data-msg="Su significado es como decir “hay sol en tu sonrisa”. Y es verdad." transform="translate(242,324)"><g class="pop" style="animation-delay:0.82s"><g class="sway" style="animation-delay:-1.3s;animation-duration:4.9s"><path d="M0,0 Q-5.2,-48 0,-96" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-35) rotate(-35) scale(0.79)"/><use href="#leaf" transform="translate(0,-56) scale(-1,1) rotate(-35) scale(0.71)"/><use href="#tulip" style="color:#f7c531" transform="translate(0,-96) scale(1)"/></g></g></g>
+<g class="flower" data-name="Rosa blanca" data-msg="Es pura ternura. Como esas canciones que te escribo a escondidas en las noches, cuando no puedo dejar de pensar en ti. 🤍" transform="translate(274,320)"><g class="pop" style="animation-delay:0.88s"><g class="sway" style="animation-delay:-4.4s;animation-duration:6.0s"><path d="M0,0 Q-5.0,-60 0,-120" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-45) rotate(-35) scale(0.85)"/><use href="#leaf" transform="translate(0,-72) scale(-1,1) rotate(-35) scale(0.77)"/><use href="#rose" style="color:#fbfbf8" transform="translate(0,-120) scale(1.4)"/></g></g></g>
+<g class="flower" data-name="Paniculata" data-msg="Nunca está sola, siempre va acompañada. Así me gusta estar a mí: contigo." transform="translate(302,328)"><g class="pop" style="animation-delay:0.94s"><g class="sway" style="animation-delay:-1.4s;animation-duration:5.1s"><path d="M0,0 Q-6,-14 -14,-4" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-28) scale(0.81)"/><path d="M0,0 Q0,-19 0,-14" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-38) scale(0.81)"/><path d="M0,0 Q5,-16 13,-7" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-31) scale(0.81)"/></g></g></g>
+<g class="flower" data-name="Tulipán rosado" data-msg="Es cariño y ternura, justo lo que siento cuando pienso en ti." transform="translate(340,324)"><g class="pop" style="animation-delay:1.00s"><g class="sway" style="animation-delay:-0.8s;animation-duration:5.5s"><path d="M0,0 Q-2.5,-47 0,-94" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-30) rotate(-35) scale(0.79)"/><use href="#leaf" transform="translate(0,-51) scale(-1,1) rotate(-35) scale(0.71)"/><use href="#tulip" style="color:#f48fb1" transform="translate(0,-94) scale(1)"/></g></g></g>
+<g class="flower" data-name="Rosa roja" data-msg="Significa pasión y amor profundo. Lo que siento cada vez que te miro." transform="translate(376,320)"><g class="pop" style="animation-delay:1.06s"><g class="sway" style="animation-delay:-4.9s;animation-duration:5.8s"><path d="M0,0 Q-2.8,-64 0,-128" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-50) rotate(-35) scale(0.87)"/><use href="#leaf" transform="translate(0,-79) scale(-1,1) rotate(-35) scale(0.78)"/><use href="#rose" style="color:#c8102e" transform="translate(0,-128) scale(1.4)"/></g></g></g>
+<g class="flower" data-name="Lirio rosado" data-msg="Es dulzura y alegría. Como cuando sueño contigo cosas tan lindas que solo deseo que el tiempo se detenga ahí, contigo. ✨" transform="translate(425,318)"><g class="pop" style="animation-delay:1.12s"><g class="sway" style="animation-delay:-1.5s;animation-duration:5.3s"><path d="M0,0 Q-3.1,-70 0,-140" stroke="#4f7f47" stroke-width="3.5" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-55) rotate(-35) scale(0.90)"/><use href="#leaf" transform="translate(0,-86) scale(-1,1) rotate(-35) scale(0.81)"/><use href="#lily" transform="translate(0,-140) scale(0.9)"/></g></g></g>
+<g class="flower" data-name="Tulipán morado" data-msg="El morado es el color de la realeza. Para que sepas que te mereces que te traten como reina. 👑" transform="translate(462,324)"><g class="pop" style="animation-delay:1.18s"><g class="sway" style="animation-delay:-2.4s;animation-duration:5.7s"><path d="M0,0 Q-6.0,-52 0,-104" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-32) rotate(-35) scale(0.81)"/><use href="#leaf" transform="translate(0,-55) scale(-1,1) rotate(-35) scale(0.73)"/><use href="#tulip" style="color:#9b5de5" transform="translate(0,-104) scale(1)"/></g></g></g>
+<g class="flower" data-name="Rosa blanca" data-msg="Representa la paz. Eso eres para mí: mi lugar tranquilo." transform="translate(500,320)"><g class="pop" style="animation-delay:1.24s"><g class="sway" style="animation-delay:-0.0s;animation-duration:5.1s"><path d="M0,0 Q-3.6,-62 0,-125" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-41) rotate(-35) scale(0.86)"/><use href="#leaf" transform="translate(0,-68) scale(-1,1) rotate(-35) scale(0.78)"/><use href="#rose" style="color:#fbfbf8" transform="translate(0,-125) scale(1.4)"/></g></g></g>
+<g class="flower" data-name="Tulipán naranjo" data-msg="Significa entusiasmo y energía. Lo mismo que me da saber que te voy a ver." transform="translate(546,324)"><g class="pop" style="animation-delay:1.30s"><g class="sway" style="animation-delay:-0.2s;animation-duration:4.6s"><path d="M0,0 Q-4.9,-48 0,-96" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-30) rotate(-35) scale(0.79)"/><use href="#leaf" transform="translate(0,-51) scale(-1,1) rotate(-35) scale(0.71)"/><use href="#tulip" style="color:#f4874b" transform="translate(0,-96) scale(1)"/></g></g></g>
 
-                <g class="stem">
-                    <path d="M210,300 C214,240 208,196 214,150" fill="none" stroke="var(--leaf-dark)" stroke-width="6"
-                        stroke-linecap="round" />
-                    <path d="M212,220 C232,212 246,222 256,238" fill="none" stroke="var(--leaf)" stroke-width="7"
-                        stroke-linecap="round" />
-                    <g transform="translate(214,136)">
-                        <!-- yellow lily: 6 pointed petals + stamens -->
-                        <g fill="var(--petal)">
-                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(0)" />
-                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(60)" />
-                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(120)" />
-                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(180)" />
-                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(240)" />
-                            <path d="M0,-4 C-9,-22 -7,-40 0,-50 C7,-40 9,-22 0,-4 Z" transform="rotate(300)" />
-                        </g>
-                        <g stroke="var(--petal-dark)" stroke-width="2" stroke-linecap="round" fill="none">
-                            <line x1="0" y1="0" x2="0" y2="-26" transform="rotate(15)" />
-                            <line x1="0" y1="0" x2="0" y2="-24" transform="rotate(-20)" />
-                            <line x1="0" y1="0" x2="0" y2="-27" transform="rotate(50)" />
-                            <line x1="0" y1="0" x2="0" y2="-23" transform="rotate(-55)" />
-                            <line x1="0" y1="0" x2="0" y2="-25" transform="rotate(100)" />
-                            <line x1="0" y1="0" x2="0" y2="-25" transform="rotate(-100)" />
-                        </g>
-                        <g fill="var(--petal-dark)">
-                            <circle cx="0" cy="-26" r="2.6" transform="rotate(15)" />
-                            <circle cx="0" cy="-24" r="2.6" transform="rotate(-20)" />
-                            <circle cx="0" cy="-27" r="2.6" transform="rotate(50)" />
-                            <circle cx="0" cy="-23" r="2.6" transform="rotate(-55)" />
-                            <circle cx="0" cy="-25" r="2.6" transform="rotate(100)" />
-                            <circle cx="0" cy="-25" r="2.6" transform="rotate(-100)" />
-                        </g>
-                        <circle r="4" fill="var(--leaf-dark)" />
-                    </g>
-                </g>
+  <!-- loma de adelante -->
+  <g mask="url(#groundMask)"><path d="M0,338 Q200,322 360,340 T600,332 L600,380 L0,380Z" fill="#7cbb5f"/>
+  <g stroke="#62a248" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M-1,340 q0.5,-3.8 0.2,-7.6"/><path d="M8,341 q1.3,-5.3 3.0,-10.6"/><path d="M13,341 q2.9,-4.1 -2.8,-8.3"/><path d="M21,341 q-2.7,-5.3 2.7,-10.5"/><path d="M29,342 q1.4,-5.2 2.5,-10.4"/><path d="M31,342 q0.0,-4.8 2.7,-9.7"/><path d="M42,343 q0.5,-5.9 3.1,-11.8"/><path d="M48,343 q-1.6,-5.4 -3.8,-10.9"/><path d="M51,343 q-2.4,-4.3 2.7,-8.5"/><path d="M60,344 q0.8,-5.2 1.4,-10.4"/><path d="M67,344 q1.8,-3.0 2.0,-6.0"/><path d="M73,344 q1.0,-4.9 -3.5,-9.7"/><path d="M81,345 q-2.6,-3.9 -1.9,-7.8"/><path d="M88,345 q1.4,-3.7 3.8,-7.4"/><path d="M93,345 q-0.1,-4.3 1.5,-8.7"/><path d="M102,345 q0.9,-5.2 -3.4,-10.3"/><path d="M105,345 q1.5,-3.9 -1.6,-7.8"/><path d="M114,346 q-2.6,-3.0 -1.8,-6.1"/><path d="M121,346 q1.1,-5.4 -1.7,-10.8"/><path d="M127,346 q-0.2,-4.6 -3.1,-9.3"/><path d="M136,346 q2.9,-3.7 3.5,-7.4"/><path d="M137,346 q1.9,-4.6 3.7,-9.2"/><path d="M146,346 q-1.7,-3.9 3.6,-7.9"/><path d="M152,346 q-2.1,-5.0 0.2,-10.1"/><path d="M163,346 q1.9,-3.5 0.1,-6.9"/><path d="M169,346 q-1.6,-5.5 3.2,-10.9"/><path d="M173,346 q-3.0,-3.1 -0.1,-6.2"/><path d="M180,346 q-2.2,-4.1 -1.2,-8.1"/><path d="M186,346 q-3.0,-5.9 2.0,-11.9"/><path d="M195,345 q2.6,-3.4 1.7,-6.8"/><path d="M202,345 q-0.8,-4.0 -0.9,-8.0"/><path d="M210,345 q-0.8,-5.1 -0.6,-10.1"/><path d="M212,345 q-2.4,-3.2 2.7,-6.3"/><path d="M219,344 q-1.5,-6.3 -1.9,-12.5"/><path d="M227,344 q-0.8,-3.7 3.6,-7.3"/><path d="M236,344 q0.8,-5.8 3.3,-11.7"/><path d="M243,343 q1.3,-4.9 -3.6,-9.8"/><path d="M248,343 q1.5,-4.6 1.2,-9.2"/><path d="M252,343 q2.6,-3.2 -3.0,-6.3"/><path d="M260,342 q-1.2,-4.2 1.9,-8.4"/><path d="M270,342 q0.9,-3.9 -1.6,-7.8"/><path d="M274,342 q-2.0,-4.4 -2.7,-8.8"/><path d="M278,341 q-0.0,-6.2 -2.2,-12.3"/><path d="M289,341 q-0.3,-6.5 -2.9,-13.0"/><path d="M291,340 q-0.9,-3.3 -3.3,-6.6"/><path d="M298,340 q0.4,-3.9 3.1,-7.8"/><path d="M308,339 q-0.5,-4.4 0.2,-8.9"/><path d="M313,339 q-2.6,-4.2 -1.8,-8.4"/><path d="M323,338 q0.0,-3.4 1.0,-6.9"/><path d="M329,338 q-1.4,-3.8 -2.0,-7.5"/><path d="M333,338 q2.7,-4.6 2.8,-9.1"/><path d="M342,337 q-2.8,-3.1 1.7,-6.2"/><path d="M349,337 q0.5,-4.7 -4.0,-9.3"/><path d="M353,337 q2.0,-6.2 2.8,-12.5"/><path d="M363,336 q-2.3,-3.9 -2.8,-7.7"/><path d="M367,336 q2.6,-5.4 1.8,-10.8"/><path d="M374,336 q-0.3,-5.7 0.4,-11.4"/><path d="M377,336 q-1.6,-5.7 3.4,-11.5"/><path d="M388,335 q-2.2,-4.1 -2.0,-8.1"/><path d="M394,335 q-2.3,-5.4 -3.4,-10.9"/><path d="M400,335 q-0.7,-5.0 -2.2,-10.1"/><path d="M407,335 q-1.2,-3.0 -0.3,-6.1"/><path d="M416,334 q2.3,-5.3 -0.2,-10.5"/><path d="M418,334 q2.8,-3.9 1.6,-7.7"/><path d="M426,334 q-0.0,-3.1 1.4,-6.2"/><path d="M433,334 q1.0,-3.9 3.4,-7.8"/><path d="M438,334 q-1.0,-3.1 -0.6,-6.2"/><path d="M448,334 q1.8,-3.7 1.9,-7.4"/><path d="M453,334 q2.8,-3.7 -1.5,-7.4"/><path d="M462,334 q-1.7,-3.8 2.1,-7.6"/><path d="M465,334 q-0.0,-6.3 -2.5,-12.7"/><path d="M472,334 q1.0,-4.5 3.6,-8.9"/><path d="M478,334 q-1.7,-4.4 3.8,-8.8"/><path d="M485,334 q-2.6,-3.2 -0.9,-6.4"/><path d="M496,335 q1.4,-6.1 4.0,-12.2"/><path d="M503,335 q-1.9,-4.2 3.5,-8.3"/><path d="M508,335 q1.0,-3.1 -1.0,-6.2"/><path d="M513,335 q-2.0,-4.2 -4.0,-8.3"/><path d="M519,336 q2.7,-4.2 -3.0,-8.5"/><path d="M529,336 q-0.9,-3.7 2.6,-7.5"/><path d="M535,336 q-2.7,-4.5 -0.2,-9.0"/><path d="M539,337 q-1.8,-6.2 -1.1,-12.4"/><path d="M549,337 q-0.5,-3.1 2.5,-6.2"/><path d="M555,337 q-2.8,-3.1 -3.5,-6.3"/><path d="M563,338 q1.5,-3.9 3.2,-7.8"/><path d="M566,338 q2.7,-4.0 0.9,-7.9"/><path d="M572,338 q-1.1,-5.5 -1.8,-11.0"/><path d="M577,339 q2.5,-5.6 1.1,-11.3"/><path d="M589,340 q-1.6,-3.1 -0.2,-6.2"/><path d="M596,340 q-0.7,-6.3 -2.0,-12.7"/></g></g>
+  <g class="flower" data-name="Margarita" data-msg="Sencilla y alegre, como esos momentitos contigo que más me gustan. 🌼" transform="translate(28,348)"><g class="pop" style="animation-delay:1.36s"><g class="sway" style="animation-delay:-4.6s;animation-duration:4.9s"><path d="M0,0 Q-0.8,-30 0,-60" stroke="#4f7f47" stroke-width="3.5" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-19) rotate(-35) scale(0.70)"/><use href="#leaf" transform="translate(0,-11) scale(-1,1) rotate(-30) scale(0.56)"/><use href="#daisy" transform="translate(0,-60) scale(0.9)"/></g></g></g>
+<g class="flower" data-name="Tulipán rosado" data-msg="Representa la felicidad y el afecto. Tú me haces feliz, así de simple." transform="translate(84,350)"><g class="pop" style="animation-delay:1.42s"><g class="sway" style="animation-delay:-4.1s;animation-duration:6.3s"><path d="M0,0 Q3.6,-34 0,-68" stroke="#4f7f47" stroke-width="3.2" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-25) rotate(-35) scale(0.72)"/><use href="#leaf" transform="translate(0,-17) scale(-1,1) rotate(-30) scale(0.58)"/><use href="#tulip" style="color:#f48fb1" transform="translate(0,-68) scale(0.8)"/></g></g></g>
+<g class="flower" data-name="Margarita" data-msg="Significa inocencia y pureza. Me encanta tu forma de ver el mundo." transform="translate(134,350)"><g class="pop" style="animation-delay:1.48s"><g class="sway" style="animation-delay:-1.6s;animation-duration:5.3s"><path d="M0,0 Q1.3,-27 0,-54" stroke="#4f7f47" stroke-width="3.3" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-16) rotate(-35) scale(0.69)"/><use href="#leaf" transform="translate(0,-8) scale(-1,1) rotate(-30) scale(0.55)"/><use href="#daisy" transform="translate(0,-54) scale(0.85)"/></g></g></g>
+<g class="flower" data-name="Paniculata" data-msg="En inglés le dicen “aliento de bebé”. Algo tan suave como tus abrazos." transform="translate(174,354)"><g class="pop" style="animation-delay:1.54s"><g class="sway" style="animation-delay:-3.9s;animation-duration:4.7s"><path d="M0,0 Q-6,-10 -14,2" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-21) scale(0.765)"/><path d="M0,0 Q0,-14 0,-5" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-28) scale(0.765)"/><path d="M0,0 Q5,-11 13,-0" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-23) scale(0.765)"/></g></g></g>
+<g class="flower" data-name="Margarita" data-msg="¿Te quiero o no te quiero? No hace falta deshojarla: te quiero." transform="translate(214,348)"><g class="pop" style="animation-delay:1.60s"><g class="sway" style="animation-delay:-1.2s;animation-duration:4.6s"><path d="M0,0 Q-3.6,-32 0,-64" stroke="#4f7f47" stroke-width="3.6" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-23) rotate(-35) scale(0.71)"/><use href="#leaf" transform="translate(0,-15) scale(-1,1) rotate(-30) scale(0.57)"/><use href="#daisy" transform="translate(0,-64) scale(0.95)"/></g></g></g>
+<g class="flower" data-name="Tulipán amarillo" data-msg="Es alegría pura, como tu risa cuando algo te da mucha risa." transform="translate(254,352)"><g class="pop" style="animation-delay:1.66s"><g class="sway" style="animation-delay:-1.6s;animation-duration:6.8s"><path d="M0,0 Q-5.6,-30 0,-60" stroke="#4f7f47" stroke-width="3.2" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-20) rotate(-35) scale(0.70)"/><use href="#leaf" transform="translate(0,-12) scale(-1,1) rotate(-30) scale(0.56)"/><use href="#tulip" style="color:#f7c531" transform="translate(0,-60) scale(0.8)"/></g></g></g>
+<g class="flower" data-name="Paniculata" data-msg="Es la flor que hace especial cualquier ramo. Tú haces eso con mis días: hasta los más normales se ponen lindos cuando hablo contigo." transform="translate(290,354)"><g class="pop" style="animation-delay:1.72s"><g class="sway" style="animation-delay:-4.4s;animation-duration:6.8s"><path d="M0,0 Q-6,-10 -14,2" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-21) scale(0.765)"/><path d="M0,0 Q0,-14 0,-5" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-28) scale(0.765)"/><path d="M0,0 Q5,-11 13,-0" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-23) scale(0.765)"/></g></g></g>
+<g class="flower" data-name="Margarita" data-msg="Representa la lealtad. Hoy eres la persona en la que pienso primero cuando me pasa algo bueno." transform="translate(324,350)"><g class="pop" style="animation-delay:1.78s"><g class="sway" style="animation-delay:-0.5s;animation-duration:5.6s"><path d="M0,0 Q-2.8,-29 0,-58" stroke="#4f7f47" stroke-width="3.5" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-15) rotate(-35) scale(0.70)"/><use href="#leaf" transform="translate(0,-7) scale(-1,1) rotate(-30) scale(0.56)"/><use href="#daisy" transform="translate(0,-58) scale(0.9)"/></g></g></g>
+<g class="flower" data-name="Rosa roja" data-msg="Regalar una rosa roja es decir “te quiero” sin palabras. Igual te lo digo con palabras: te quiero." transform="translate(360,350)"><g class="pop" style="animation-delay:1.84s"><g class="sway" style="animation-delay:-1.2s;animation-duration:5.5s"><path d="M0,0 Q2.5,-35 0,-70" stroke="#4f7f47" stroke-width="3.2" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-22) rotate(-35) scale(0.73)"/><use href="#leaf" transform="translate(0,-14) scale(-1,1) rotate(-30) scale(0.58)"/><use href="#rose" style="color:#c8102e" transform="translate(0,-70) scale(1.1199999999999999)"/></g></g></g>
+<g class="flower" data-name="Margarita" data-msg="Florece en cualquier lugar y lo hace más lindo. Igual que tú." transform="translate(400,346)"><g class="pop" style="animation-delay:1.90s"><g class="sway" style="animation-delay:-3.7s;animation-duration:6.4s"><path d="M0,0 Q1.4,-36 0,-72" stroke="#4f7f47" stroke-width="3.8" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-25) rotate(-35) scale(0.73)"/><use href="#leaf" transform="translate(0,-17) scale(-1,1) rotate(-30) scale(0.58)"/><use href="#daisy" transform="translate(0,-72) scale(1)"/></g></g></g>
+<g class="flower" data-name="Tulipán morado" data-msg="Simboliza la elegancia. Como tú, aunque no te des cuenta." transform="translate(440,352)"><g class="pop" style="animation-delay:1.96s"><g class="sway" style="animation-delay:-4.2s;animation-duration:5.2s"><path d="M0,0 Q2.0,-30 0,-60" stroke="#4f7f47" stroke-width="3.2" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-16) rotate(-35) scale(0.70)"/><use href="#leaf" transform="translate(0,-8) scale(-1,1) rotate(-30) scale(0.56)"/><use href="#tulip" style="color:#9b5de5" transform="translate(0,-60) scale(0.8)"/></g></g></g>
+<g class="flower" data-name="Margarita" data-msg="Es la flor de la alegría simple. Como lo que siento cuando me llega un mensaje tuyo." transform="translate(478,352)"><g class="pop" style="animation-delay:2.02s"><g class="sway" style="animation-delay:-3.7s;animation-duration:5.0s"><path d="M0,0 Q0.8,-24 0,-48" stroke="#4f7f47" stroke-width="3.2" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-15) rotate(-35) scale(0.67)"/><use href="#leaf" transform="translate(0,-7) scale(-1,1) rotate(-30) scale(0.54)"/><use href="#daisy" transform="translate(0,-48) scale(0.8)"/></g></g></g>
+<g class="flower" data-name="Rosa blanca" data-msg="Es cariño del bonito. Lo que siento ahora mismo, mientras planto cada florcita de este jardín pensando en ti." transform="translate(516,350)"><g class="pop" style="animation-delay:2.08s"><g class="sway" style="animation-delay:-0.8s;animation-duration:6.5s"><path d="M0,0 Q-3.0,-33 0,-66" stroke="#4f7f47" stroke-width="3.2" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-19) rotate(-35) scale(0.72)"/><use href="#leaf" transform="translate(0,-11) scale(-1,1) rotate(-30) scale(0.57)"/><use href="#rose" style="color:#fbfbf8" transform="translate(0,-66) scale(1.1199999999999999)"/></g></g></g>
+<g class="flower" data-name="Margarita" data-msg="Simboliza la calma. Esa que siento cuando me abrazas y, por un ratito, no existe nada más que tú y yo." transform="translate(554,348)"><g class="pop" style="animation-delay:2.14s"><g class="sway" style="animation-delay:-2.0s;animation-duration:6.8s"><path d="M0,0 Q0.9,-31 0,-62" stroke="#4f7f47" stroke-width="3.6" fill="none" stroke-linecap="round"/><use href="#leaf" transform="translate(0,-19) rotate(-35) scale(0.71)"/><use href="#leaf" transform="translate(0,-11) scale(-1,1) rotate(-30) scale(0.56)"/><use href="#daisy" transform="translate(0,-62) scale(0.95)"/></g></g></g>
+<g class="flower" data-name="Paniculata" data-msg="Es delicada y suave, pero ilumina todo a su alrededor. Así te veo yo, preciosa." transform="translate(590,352)"><g class="pop" style="animation-delay:2.20s"><g class="sway" style="animation-delay:-2.5s;animation-duration:5.0s"><path d="M0,0 Q-6,-11 -14,-1" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(-14,-22) scale(0.7200000000000001)"/><path d="M0,0 Q0,-15 0,-8" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(0,-30) scale(0.7200000000000001)"/><path d="M0,0 Q5,-12 13,-3" stroke="#7fa874" stroke-width="1.2" fill="none"/><use href="#gyp" transform="translate(13,-25) scale(0.7200000000000001)"/></g></g></g>
 
-                <g class="stem">
-                    <path d="M300,300 C296,244 302,204 296,164" fill="none" stroke="var(--leaf-dark)" stroke-width="6"
-                        stroke-linecap="round" />
-                    <path d="M298,226 C280,220 266,230 258,246" fill="none" stroke="var(--leaf)" stroke-width="7"
-                        stroke-linecap="round" />
-                    <g transform="translate(296,150)">
-                        <g fill="var(--petal)">
-                            <ellipse rx="15" ry="30" transform="rotate(0)" />
-                            <ellipse rx="15" ry="30" transform="rotate(40)" />
-                            <ellipse rx="15" ry="30" transform="rotate(80)" />
-                            <ellipse rx="15" ry="30" transform="rotate(120)" />
-                            <ellipse rx="15" ry="30" transform="rotate(160)" />
-                            <ellipse rx="15" ry="30" transform="rotate(200)" />
-                            <ellipse rx="15" ry="30" transform="rotate(240)" />
-                            <ellipse rx="15" ry="30" transform="rotate(280)" />
-                            <ellipse rx="15" ry="30" transform="rotate(320)" />
-                        </g>
-                        <circle r="17" fill="var(--petal-dark)" />
-                        <circle r="17" fill="none" stroke="var(--petal-deep)" stroke-width="1.5"
-                            stroke-dasharray="2 3" />
-                    </g>
-                </g>
+  
+<g class="butterfly">
+  <g>
+    <animateMotion dur="22s" repeatCount="indefinite" rotate="0"
+      path="M-30,150 C80,60 160,190 260,110 S420,40 470,140 S600,90 640,60"/>
+    <g transform="scale(.9)">
+      <g class="wing"><path d="M0,0 C-10,-16 -22,-12 -18,-2 C-22,6 -10,12 0,2Z" fill="#f7a8c0"/><path d="M0,0 C-6,-8 -12,-7 -11,-3" stroke="#fff" stroke-opacity=".6" fill="none"/></g>
+      <g class="wing r"><path d="M0,0 C10,-16 22,-12 18,-2 C22,6 10,12 0,2Z" fill="#f48fb1"/></g>
+      <ellipse rx="1.6" ry="6" fill="#5a3d4a"/>
+    </g>
+  </g>
+</g>
+</svg>
 
-                <g class="stem">
-                    <path d="M390,300 C386,252 392,214 386,182" fill="none" stroke="var(--leaf-dark)" stroke-width="5"
-                        stroke-linecap="round" />
-                    <path d="M388,240 C408,234 420,244 428,258" fill="none" stroke="var(--leaf)" stroke-width="6"
-                        stroke-linecap="round" />
-                    <g transform="translate(386,170)">
-                        <!-- yellow lily: 6 pointed petals + stamens -->
-                        <g fill="var(--petal)">
-                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(0)" />
-                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(60)" />
-                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(120)" />
-                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(180)" />
-                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(240)" />
-                            <path d="M0,-3 C-7,-16 -5,-30 0,-38 C5,-30 7,-16 0,-3 Z" transform="rotate(300)" />
-                        </g>
-                        <g stroke="var(--petal-dark)" stroke-width="1.6" stroke-linecap="round" fill="none">
-                            <line x1="0" y1="0" x2="0" y2="-20" transform="rotate(15)" />
-                            <line x1="0" y1="0" x2="0" y2="-19" transform="rotate(-20)" />
-                            <line x1="0" y1="0" x2="0" y2="-21" transform="rotate(50)" />
-                            <line x1="0" y1="0" x2="0" y2="-18" transform="rotate(-55)" />
-                            <line x1="0" y1="0" x2="0" y2="-19" transform="rotate(100)" />
-                            <line x1="0" y1="0" x2="0" y2="-19" transform="rotate(-100)" />
-                        </g>
-                        <g fill="var(--petal-dark)">
-                            <circle cx="0" cy="-20" r="2" transform="rotate(15)" />
-                            <circle cx="0" cy="-19" r="2" transform="rotate(-20)" />
-                            <circle cx="0" cy="-21" r="2" transform="rotate(50)" />
-                            <circle cx="0" cy="-18" r="2" transform="rotate(-55)" />
-                            <circle cx="0" cy="-19" r="2" transform="rotate(100)" />
-                            <circle cx="0" cy="-19" r="2" transform="rotate(-100)" />
-                        </g>
-                        <circle r="3" fill="var(--leaf-dark)" />
-                    </g>
-                </g>
-
-                <g class="stem">
-                    <path d="M460,300 C463,262 458,232 462,206" fill="none" stroke="var(--leaf-dark)" stroke-width="4"
-                        stroke-linecap="round" />
-                    <g transform="translate(462,196)">
-                        <g fill="var(--petal)">
-                            <ellipse rx="10" ry="20" transform="rotate(0)" />
-                            <ellipse rx="10" ry="20" transform="rotate(45)" />
-                            <ellipse rx="10" ry="20" transform="rotate(90)" />
-                            <ellipse rx="10" ry="20" transform="rotate(135)" />
-                            <ellipse rx="10" ry="20" transform="rotate(180)" />
-                            <ellipse rx="10" ry="20" transform="rotate(225)" />
-                            <ellipse rx="10" ry="20" transform="rotate(270)" />
-                            <ellipse rx="10" ry="20" transform="rotate(315)" />
-                        </g>
-                        <circle r="12" fill="var(--petal-dark)" />
-                    </g>
-                </g>
-            </svg>
-
-            <span class="petal-fall" style="left:12%;animation-duration:7s;">❀</span>
-            <span class="petal-fall" style="left:38%;animation-duration:9s;animation-delay:1.5s;">❀</span>
-            <span class="petal-fall" style="left:64%;animation-duration:8s;animation-delay:3s;">❀</span>
-            <span class="petal-fall" style="left:84%;animation-duration:10s;animation-delay:.5s;">❀</span>
+            <span class="petal-fall" style="left:10%;color:#f9c41f;font-size:13px;animation-duration:8s;animation-delay:.5s;">❀</span>
+            <span class="petal-fall" style="left:28%;color:#ffffff;font-size:10px;animation-duration:10s;animation-delay:2s;">●</span>
+            <span class="petal-fall" style="left:46%;color:#f48fb1;font-size:13px;animation-duration:9s;animation-delay:3.5s;">❀</span>
+            <span class="petal-fall" style="left:66%;color:#ffffff;font-size:9px;animation-duration:11s;animation-delay:1s;">●</span>
+            <span class="petal-fall" style="left:80%;color:#d62839;font-size:12px;animation-duration:9.5s;animation-delay:5s;">❀</span>
+            <span class="petal-fall" style="left:92%;color:#ffffff;font-size:13px;animation-duration:8.5s;animation-delay:6s;">✿</span>
         </div>
 
-        <p class="eyebrow">27 de octubre</p>
-        <h1>Para Monserratt</h1>
+        <div class="note" id="note" aria-live="polite">
+            <b>Un jardín solo para ti</b>
+            <span>Toca cada flor, que cada una tiene algo que decirte 🌷</span>
+        </div>
+        <p class="counter" id="counter"></p>
 
-        <div class="date-badge">🌼 Mensajito del día para esa persona que tengo en el corazoncito</div>
+        <p class="eyebrow">31 de octubre</p>
+        <h1>Para Monserratt <span class="heart">♥</span></h1>
 
-        <div class="divider"></div>
+        <div class="date-badge">🌷 Mensajito del día para esa persona que tengo en el corazoncito</div>
+
+        <div class="divider">✿</div>
 
         <div class="letter">
             <p class="greeting">Hola preciosa,</p>
 
-          <p class="dropcap">Espero que se encuentre bien y feliz. Lamento decirle que su página estará en mantenimiento durante hoy y miércoles, dado que estoy probando cositas nuevas en su página. </p>
-            <p>Le aclaro esto por si llega a salir error en la página o simplemente no pueda acceder. Espero que pueda tener su comprensión, lamentamos las molestias que pueda generar esto jajajs y aprovecho de decirle que deseo verla muy pronto. Cuídate mucho preciosa. </p>
-            <p>Espero que te guste lo nuevo. Lo hago con mucho cariño</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <!-- ✏️ Puedes cambiar estos párrafos por tu propio mensaje -->
+            <p class="dropcap">Esta vez te planté un jardín con todos sus colores: rosas rojas y blancas, tulipanes de todos los colores, margaritas, lirios, girasoles y su paniculata acompañándolas.</p>
+            <p>No se marchitan nunca y puedes venir a verlas cuando quieras. Cada flor tiene un mensajito escondido, así que no te olvides de tocarlas todas.</p>
+            <p>Espero que te saque una sonrisa. Lo hice con mucho cariño para ti preciosa (disculpe la tardanza).</p>
 
             <div class="signoff">
                 <p class="care-line">Con todo mi cariño,</p>
@@ -464,8 +445,81 @@ a<!DOCTYPE html>
             </div>
         </div>
 
-        <footer>hecho para ti preciosa</footer>
+        <footer>hecho para ti preciosa ♥</footer>
     </div>
+
+    <script>
+        (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var layer = document.querySelector('.hearts');
+            var colors = ['#e46a88', '#d62839', '#f48fb1', '#ffffff', '#f7a8c0', '#c94a6c'];
+            var glyphs = ['♥', '♥', '♥', '❤', '♡'];
+
+            function rand(a, b) { return a + Math.random() * (b - a); }
+
+            function heart(x, y, opts) {
+                opts = opts || {};
+                var h = document.createElement('span');
+                h.className = 'heart-float';
+                h.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+                h.style.left = x + 'px';
+                h.style.top = y + 'px';
+                h.style.fontSize = (opts.size || rand(12, 21)) + 'px';
+                h.style.color = colors[Math.floor(Math.random() * colors.length)];
+                h.style.setProperty('--dx', (opts.dx != null ? opts.dx : rand(-18, 18)) + 'px');
+                h.style.setProperty('--dy', (opts.dy != null ? opts.dy : rand(-70, -130)) + 'px');
+                h.style.setProperty('--rot', rand(-35, 35) + 'deg');
+                h.style.setProperty('--dur', (opts.dur || rand(3, 5)) + 's');
+                h.addEventListener('animationend', function () { h.remove(); });
+                layer.appendChild(h);
+            }
+
+            // Corazoncitos por las orillas de la página
+            function edgeHeart() {
+                var w = window.innerWidth, hgt = window.innerHeight;
+                var band = Math.max(18, Math.min(70, w * 0.08));
+                var left = Math.random() < 0.5;
+                var x = left ? rand(2, band) : rand(w - band - 14, w - 16);
+                var y = rand(hgt * 0.1, hgt * 0.98);
+                heart(x, y);
+            }
+
+            if (!reduce) {
+                setInterval(edgeHeart, 380);
+                for (var i = 0; i < 8; i++) setTimeout(edgeHeart, i * 120);
+
+                // Al tocar la pantalla, salen corazoncitos
+                document.addEventListener('pointerdown', function (e) {
+                    for (var k = 0; k < 7; k++) {
+                        var a = (Math.PI * 2 * k) / 7 + rand(-.3, .3);
+                        var d = rand(30, 60);
+                        heart(e.clientX - 6, e.clientY - 8, {
+                            dx: Math.cos(a) * d, dy: Math.sin(a) * d - 40, dur: rand(1.4, 2.2), size: rand(10, 16)
+                        });
+                    }
+                });
+            }
+
+            // Mensajito de cada flor
+            var note = document.getElementById('note');
+            var picked = null;
+            var counter = document.getElementById('counter');
+            document.querySelectorAll('.flower').forEach(function (f) {
+                f.addEventListener('click', function () {
+                    if (picked) picked.classList.remove('picked');
+                    picked = f; f.classList.add('picked');
+                    note.classList.add('swap');
+                    setTimeout(function () {
+                        note.innerHTML = '<b>' + f.dataset.name + '</b><span>' + f.dataset.msg + '</span>';
+                        f.dataset.seen = '1';
+                        var total = document.querySelectorAll('.flower').length, seen = document.querySelectorAll('.flower[data-seen]').length;
+                        counter.textContent = seen < total ? ('Has descubierto ' + seen + ' de ' + total + ' flores 🌷') : '¡Encontraste todos los mensajes! Te quiero mucho ♥';
+                        note.classList.remove('swap');
+                    }, 250);
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
