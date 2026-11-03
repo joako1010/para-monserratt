@@ -503,7 +503,7 @@
                         note.innerHTML = '<b>' + f.dataset.name + '</b><span>' + f.dataset.msg + '</span>';
                         f.dataset.seen = '1';
                         var total = document.querySelectorAll('.flower').length, seen = document.querySelectorAll('.flower[data-seen]').length;
-                        counter.textContent = seen < total ? ('Has descubierto ' + seen + ' de ' + total + ' flores 🌷') : '¡Encontraste todos los mensajes! Te quiero mucho ♥';
+                        counter.textContent = seen < total ? (' flores para usted 🌷') : '¡Encontraste todos los mensajes! Te quiero mucho ♥';
                         note.classList.remove('swap');
                     }, 250);
                 });
